@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 947799686}
   - component: {fileID: 947799685}
   - component: {fileID: 947799684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformsTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6695,6 +6695,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5425025053101311603, guid: a69523f52cb9d4a49b2821ba18788a09, type: 3}
+      propertyPath: m_GravityScale
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425025053101311603, guid: a69523f52cb9d4a49b2821ba18788a09, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909731086962943384, guid: a69523f52cb9d4a49b2821ba18788a09, type: 3}
+      propertyPath: jumpSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6109457646164570306, guid: a69523f52cb9d4a49b2821ba18788a09, type: 3}
       propertyPath: m_Name
       value: Ginger (Player)
