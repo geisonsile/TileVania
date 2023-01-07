@@ -5,9 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] AudioClip enemySFX;
+
     Rigidbody2D myRigidbody;
     PlayerMovement player;
     float xSpeed;
+
+    public ParticleSystem dieEnemyFX;
 
     void Start()
     {
@@ -25,7 +29,15 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
+        {
+            AudioSource.PlayClipAtPoint(enemySFX, Camera.main.transform.position);
             Destroy(collision.gameObject);
+
+            Instantiate(dieEnemyFX);
+            dieEnemyFX.transform.localPosition = collision.gameObject.transform.localPosition;// - new Vector3(0, 0.5f, 0);
+            print(collision.gameObject.transform.localPosition + collision.gameObject.name);
+            //Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+        }
 
         Destroy(gameObject);
     }

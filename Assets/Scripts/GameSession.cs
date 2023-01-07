@@ -31,8 +31,10 @@ public class GameSession : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void ProcessPlayerDeath()
+    public IEnumerator ProcessPlayerDeath()
     {
+        yield return new WaitForSeconds(1f);
+
         if(playerLives > 1)
         {
             TakeLife();

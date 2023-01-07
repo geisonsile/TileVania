@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] float levelLoadDelay = 0.5f;
+    [SerializeField] AudioClip exitSFX;
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -18,6 +18,9 @@ public class LevelExit : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
+        FindObjectOfType<PlayerMovement>().isMove = false;
+        AudioSource.PlayClipAtPoint(exitSFX, Camera.main.transform.position);
+
         yield return new WaitForSecondsRealtime(levelLoadDelay);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;

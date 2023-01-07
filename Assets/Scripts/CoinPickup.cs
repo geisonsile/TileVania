@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour
 {
     [SerializeField] AudioClip coinPickupSFX;
-    [SerializeField] int pointsForCoinPickup = 100;
+    [SerializeField] int pointsForCoinPickup = 1;
 
     bool wasCollected = false;
     

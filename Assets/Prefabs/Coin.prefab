@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8842132370559925873}
   - component: {fileID: 8842132370559925878}
   - component: {fileID: 1983808451545750128}
-  - component: {fileID: -2983972108696874126}
+  - component: {fileID: 3958196162773635264}
   m_Layer: 14
   m_Name: Coin
   m_TagString: Untagged
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e1dba1186ec7844b05312f41518516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPickupSFX: {fileID: 8300000, guid: b66778c5caf5e194ba453fc1818f9e68, type: 3}
-  pointsForCoinPickup: 100
---- !u!82 &-2983972108696874126
+  coinPickupSFX: {fileID: 8300000, guid: ec2b0ab862242f54ba7f33d39c6ed700, type: 3}
+  pointsForCoinPickup: 1
+--- !u!82 &3958196162773635264
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

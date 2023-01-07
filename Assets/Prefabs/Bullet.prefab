@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5636711055878115406}
   - component: {fileID: 939739149684745953}
+  - component: {fileID: -1828649050414465550}
   - component: {fileID: 4009433659886521940}
   - component: {fileID: 824068806735636600}
-  - component: {fileID: -1828649050414465550}
   m_Layer: 13
   m_Name: Bullet
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1599927100658668866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1124341973
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 497394434913321410, guid: eb08c0ba1f867834d9854a76c2c09cb8, type: 3}
-  m_Color: {r: 0.8773585, g: 0.26072446, b: 0.26072446, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 51d2ca04f7a37ee409d5aca1cad19f72, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,6 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1828649050414465550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599927100658668866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab7e995ad59ac147a64672b746f682c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 20
+  enemySFX: {fileID: 8300000, guid: b66778c5caf5e194ba453fc1818f9e68, type: 3}
+  dieEnemyFX: {fileID: 19800002, guid: 892c2159588dc16499fbb990ca3ceeb4, type: 3}
 --- !u!50 &4009433659886521940
 Rigidbody2D:
   serializedVersion: 4
@@ -119,19 +134,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03882909, y: -0.07765818}
-  m_Size: {x: 0.45084584, y: 0.75038445}
+  m_Offset: {x: -0.0018490156, y: 0.0036981504}
+  m_Size: {x: 0.5987663, y: 0.5987663}
   m_Direction: 0
---- !u!114 &-1828649050414465550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599927100658668866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab7e995ad59ac147a64672b746f682c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 20

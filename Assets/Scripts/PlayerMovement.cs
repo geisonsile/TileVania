@@ -9,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
+
+    [SerializeField] AudioClip jumpSFX, dieSFX, bounceSFX, bulletSFX;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -20,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myFeetCollider;
     float gravityScaleAtStart;
 
-    bool isAlive = true;
+    public bool isMove = true;
 
 
     void Start()
@@ -34,32 +37,35 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        if(!isAlive) { return; }
+        if(!isMove) { return; }
         Run();
         FlipSprite();
         ClimbLadder();
         Die();
+        Bounce();
     }
    
     void OnFire(InputValue value)
     {
-        if (!isAlive) { return; }
+        if (!isMove) { return; }
         Instantiate(bullet, gun.position, transform.rotation);
+        AudioSource.PlayClipAtPoint(bulletSFX, Camera.main.transform.position);
     }
     void OnMove(InputValue value)
     {
-        if(!isAlive) { return; }
+        if(!isMove) { return; }
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value)
     {
-        if(!isAlive) { return; }
+        if(!isMove) { return; }
         if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){ return; }
 
         if(value.isPressed)
         {
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+            AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
         }
     }
 
@@ -105,10 +111,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
-            isAlive = false;
+            isMove = false;
             myAnimator.SetTrigger("Dying");
             myRigidbody.velocity = deathKick;
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            AudioSource.PlayClipAtPoint(dieSFX, Camera.main.transform.position);
+
+            StartCoroutine(FindObjectOfType<GameSession>().ProcessPlayerDeath());
+        }
+    }
+
+    void Bounce()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Bouncing")) &&
+            !myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            AudioSource.PlayClipAtPoint(bounceSFX, Camera.main.transform.position);
         }
     }
 
