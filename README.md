@@ -12,11 +12,11 @@ Projeto pessoal de um jogo de plataforma para estudar alguns recursos da Unity:
     <img src="Assets/Images/Level1.jpg" width="70%" />
   </p>
   <p>
-    <b>Level 2</b></p>
+    <b>Level 2</b><br>
     <img src="Assets/Images/Level2.JPG" width="70%" />
   </p>
   <p>
-    <b>Level 3</b></p>
+    <b>Level 3</b><br>
     <img src="Assets/Images/Level3.JPG" width="70%" />
   </p>
 </p>
