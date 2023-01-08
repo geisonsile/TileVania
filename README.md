@@ -1,14 +1,23 @@
 # TileVania
-Projeto pessoal para criar um jogo de platafomra utilizando Tilemap para criar o cenário e câmera com movimento dinâmico.
+Projeto pessoal de um jogo de plataforma para estudar alguns recursos da Unity:
+* Tilemap para criar o cenário
+* Unity Rule Tiles
+* Cinemachine deixando a câmera com movimento dinâmico.
 
 # Screenshots
 
 <p align="middle">
-  <p><b>Level 1</b></p>
-  <p><img src="Assets/Images/Level1.jpg" width="50%" /></p>
-  <p><b>Level 2</b></p>
-  <p><img src="Assets/Images/Level2.JPG" width="50%" /></p>
-  <p><b>Level 3</b></p>
-  <p><img src="Assets/Images/Level3.JPG" width="50%" /></p>
+  <p>
+    <b>Level 1</b><br>
+    <img src="Assets/Images/Level1.jpg" width="70%" />
+  </p>
+  <p>
+    <b>Level 2</b></p>
+    <img src="Assets/Images/Level2.JPG" width="70%" />
+  </p>
+  <p>
+    <b>Level 3</b></p>
+    <img src="Assets/Images/Level3.JPG" width="70%" />
+  </p>
 </p>
 
