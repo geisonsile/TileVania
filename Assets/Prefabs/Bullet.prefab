@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 20
   enemySFX: {fileID: 8300000, guid: b66778c5caf5e194ba453fc1818f9e68, type: 3}
-  dieEnemyFX: {fileID: 19800002, guid: 892c2159588dc16499fbb990ca3ceeb4, type: 3}
+  dieEnemyFX: {fileID: 100002, guid: 892c2159588dc16499fbb990ca3ceeb4, type: 3}
 --- !u!50 &4009433659886521940
 Rigidbody2D:
   serializedVersion: 4

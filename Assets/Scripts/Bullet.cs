@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     PlayerMovement player;
     float xSpeed;
 
-    public ParticleSystem dieEnemyFX;
+    public GameObject dieEnemyFX;
 
     void Start()
     {
@@ -28,15 +28,13 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy") // && collision.GetType().ToString().Equals("UnityEngine.CapsuleCollider2D"))
         {
             AudioSource.PlayClipAtPoint(enemySFX, Camera.main.transform.position);
             Destroy(collision.gameObject);
-
-            Instantiate(dieEnemyFX);
-            dieEnemyFX.transform.localPosition = collision.gameObject.transform.localPosition;// - new Vector3(0, 0.5f, 0);
-            print(collision.gameObject.transform.localPosition + collision.gameObject.name);
-            //Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+            
+            GameObject effect = Instantiate(dieEnemyFX);
+            effect.transform.position = collision.transform.position - new Vector3(0, 0.5f, 0);
         }
 
         Destroy(gameObject);
