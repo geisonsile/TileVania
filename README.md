@@ -4,6 +4,9 @@ Projeto pessoal de um jogo de plataforma para estudar alguns recursos da Unity:
 * Unity Rule Tiles
 * Cinemachine deixando a câmera com movimento dinâmico.
 
+# Game
+**Jogue agora em** https://play.unity.com/mg/other/webgl-builds-295396
+
 # Screenshots
 
 <p align="middle">
