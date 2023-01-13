@@ -90,6 +90,7 @@ MonoBehaviour:
   dieSFX: {fileID: 8300000, guid: 8c425795c4b73604aa2476d639d7f1b6, type: 3}
   bounceSFX: {fileID: 8300000, guid: 90cc7c4c7614cdc46b57221272c6546e, type: 3}
   bulletSFX: {fileID: 8300000, guid: fbb559f58721e0442a2724234f72141c, type: 3}
+  myAnimator: {fileID: 6109457646164570316}
   isMove: 1
 --- !u!114 &6109457647602519126
 MonoBehaviour:

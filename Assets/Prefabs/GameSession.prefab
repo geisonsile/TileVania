@@ -418,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLives: 3
   score: 0
+  canvas: {fileID: 2096598469}
   livesText: {fileID: 1034777585}
   scoreText: {fileID: 352200952}
 --- !u!1 &3969708321221249913

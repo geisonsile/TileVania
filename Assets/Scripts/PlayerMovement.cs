@@ -17,19 +17,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip jumpSFX, dieSFX, bounceSFX, bulletSFX;
 
     Vector2 moveInput;
-    Rigidbody2D myRigidbody;
-    Animator myAnimator;
+    Rigidbody2D myRigidbody; 
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
     float gravityScaleAtStart;
 
+    public Animator myAnimator;
     public bool isMove = true;
 
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidbody.gravityScale;
@@ -128,5 +127,4 @@ public class PlayerMovement : MonoBehaviour
             AudioSource.PlayClipAtPoint(bounceSFX, Camera.main.transform.position);
         }
     }
-
 }

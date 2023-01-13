@@ -18,7 +18,10 @@ public class LevelExit : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        FindObjectOfType<PlayerMovement>().isMove = false;
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
+        player.isMove = false;
+        player.myAnimator.SetBool("isRunning", false);
+
         AudioSource.PlayClipAtPoint(exitSFX, Camera.main.transform.position);
 
         yield return new WaitForSecondsRealtime(levelLoadDelay);
@@ -26,7 +29,12 @@ public class LevelExit : MonoBehaviour
         int nextSceneIndex = currentSceneIndex + 1;
 
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
             nextSceneIndex = 0;
+            GameSession gameSession = FindObjectOfType<GameSession>();
+            if (gameSession != null)
+                Destroy(gameSession.gameObject);
+        }
 
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(nextSceneIndex);
