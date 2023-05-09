@@ -5,7 +5,7 @@ Projeto pessoal de um jogo de plataforma para estudar alguns recursos da Unity:
 * Cinemachine deixando a câmera com movimento dinâmico.
 
 # Game
-**Jogue agora em** https://play.unity.com/mg/other/webgl-builds-295396
+**Jogue agora em** https://geisonleite.itch.io/tilevania
 
 # Screenshots
 
